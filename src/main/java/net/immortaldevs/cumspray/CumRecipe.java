@@ -22,10 +22,14 @@ public class CumRecipe extends SpecialCraftingRecipe {
             if (stack.isEmpty()) continue;
 
             if (stack.isOf(CumSprayItems.CUM_SPRAY)) {
-                if (spray) return false;
+                if (spray) {
+                    if (victim) return false;
+                    victim = true;
+                }
                 spray = true;
             } else {
                 if (victim) return false;
+                if (stack.getNbt() != null && stack.getNbt().getBoolean("cum_coated")) return false;
                 victim = true;
             }
         }
@@ -35,9 +39,16 @@ public class CumRecipe extends SpecialCraftingRecipe {
 
     @Override
     public ItemStack craft(CraftingInventory inventory) {
+        boolean doublecum = false;
         for (int i = 0; i < inventory.size(); i++) {
             ItemStack stack = inventory.getStack(i);
-            if (stack.isEmpty() || stack.isOf(CumSprayItems.CUM_SPRAY)) continue;
+            if (stack.isEmpty()) continue;
+            if (stack.isOf(CumSprayItems.CUM_SPRAY)) {
+                if (!doublecum) {
+                    doublecum = true;
+                    continue;
+                }
+            }
 
             ItemStack victim = stack.copy();
             victim.setCount(1);

@@ -24,7 +24,7 @@ public final class CumSprayRenderLayers extends RenderLayer {
                     .texturing(new Texturing("cum_coating",
                             () -> RenderSystem.setTextureMatrix(Matrix4f.scale(8f, 8f, 8f)),
                             RenderSystem::resetTextureMatrix))
-                    .build(false));
+                    .build(true));
 
     private CumSprayRenderLayers(String name, VertexFormat vertexFormat, VertexFormat.DrawMode drawMode, int expectedBufferSize, boolean hasCrumbling, boolean translucent, Runnable startAction, Runnable endAction) {
         super(name, vertexFormat, drawMode, expectedBufferSize, hasCrumbling, translucent, startAction, endAction);

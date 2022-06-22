@@ -3,12 +3,13 @@ package net.immortaldevs.cumspray;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.MutableText;
 import org.jetbrains.annotations.Nullable;
+import net.minecraft.text.Text;
 
 public final class Util {
     public static MutableText rainbow(MutableText text, @Nullable NbtCompound nbt) {
         if (nbt == null || !nbt.getBoolean("cum_coated")) return text;
 
-        return text.styled(style -> {
+        return Text.translatable("cum.item.prefix").append(" ").append(text.getString()).styled(style -> {
             int time = (int) System.currentTimeMillis();
             int rem = time & 0xff;
 
