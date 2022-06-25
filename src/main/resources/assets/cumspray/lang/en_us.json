@@ -1,5 +1,8 @@
 {
   "item.cumspray.cum_spray": "Cum Spray",
   "subtitles.entity.wandering_trader.ejaculate": "Wandering Trader ejaculates",
-  "cum.item.prefix": "Cum Soaked"
+  "subtitles.entity.villager.ejaculate": "Villager ejaculates",
+  "cum.item.prefix": "Cum Soaked",
+  "commands.cum.success.single": "Modified Cum State of %s",
+  "commands.cum.success.multiple": "Modified Cum State of %s entities"
 }

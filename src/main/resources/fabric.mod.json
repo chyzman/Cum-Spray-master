@@ -13,6 +13,9 @@
   "entrypoints": {
     "main": [
       "net.immortaldevs.cumspray.CumSpray"
+    ],
+    "cardinal-components-entity": [
+      "net.immortaldevs.cumspray.CUMponentInit"
     ]
   },
 
@@ -27,5 +30,10 @@
     "fabric": "*",
     "minecraft": ">=1.19",
     "java": ">=17"
+  },
+  "custom": {
+    "cardinal-components": [
+      "cum_spray:cum_coated"
+    ]
   }
 }

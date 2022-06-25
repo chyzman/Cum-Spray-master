@@ -14,6 +14,10 @@ version = project.cumspray_version
 
 repositories {
     maven { url 'https://jitpack.io' }
+    maven {
+        name = 'Ladysnake Mods'
+        url = 'https://ladysnake.jfrog.io/artifactory/mods'
+    }
 }
 
 dependencies {
@@ -25,6 +29,11 @@ dependencies {
 
     modImplementation include("com.github.devs-immortal:Divine-Intervention:${project.divine_intervention_version}")
     annotationProcessor "com.github.devs-immortal:Divine-Intervention:${project.divine_intervention_version}"
+
+    modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-base:${project.cardinal_components_version}"
+    modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:${project.cardinal_components_version}"
+    include "dev.onyxstudios.cardinal-components-api:cardinal-components-base:${project.cardinal_components_version}"
+    include "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:${project.cardinal_components_version}"
 }
 
 processResources {
